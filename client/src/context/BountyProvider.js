@@ -14,7 +14,7 @@ class BountyProvider extends Component {
     getBounties = () => {
         axios.get("/bounty/v1").then(response => {      
             this.setState({
-                bounties: response.data
+                bounties: response.data.reverse()
             })
         })
     }
