@@ -36,13 +36,6 @@ class Bounty extends Component {
             bountyAmount: this.state.bountyAmount,
             bountyType: this.state.bountyType
         }
-        this.setState({
-            firstName: "",
-            lastName: "",
-            isLiving: "",
-            bountyAmount: "",
-            bountyType: "jedi"
-        })
         this.props.updateBounty(this.props._id, bountyUpdates)
         this.toggler()
     }

@@ -44,7 +44,7 @@ class App extends Component {
                 firstName: "",
                 lastName: "",
                 isLiving: true,
-                bountyAmount: undefined,
+                bountyAmount: "",
                 bountyType: "jedi"
             }
         )
