@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 // Schema defines what the data should look like (enfoces)
 const bountySchema = new Schema({
     userId: {
-        templateId: templateA,
         firstName: {
             type: String,
             required: true
