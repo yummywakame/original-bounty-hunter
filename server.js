@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 app.use("/bounty/v1", require ('./routes/bountyRoutes.js'))
 
 // DB Connection
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost:27017/first-db", { useNewUrlParser: true }, () => { 
+mongoose.connect(process.env.MONGOLAB_NAVY_URI || "mongodb://localhost:27017/first-db", { useNewUrlParser: true }, () => { 
     console.log('[o] Connected to the DB')
 })
 
