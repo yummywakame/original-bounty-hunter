@@ -100,7 +100,7 @@ p {
 
 /* FORM INPUTS */
 
-input, button {
+input, button, input[type="number"] {
     display: inline-block;
     color: #1d1e26;
     font-family: 'Roboto', Sans-Serif;
