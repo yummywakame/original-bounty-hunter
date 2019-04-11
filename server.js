@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
-const PORT = 7000
+const PORT = process.env.PORT || 7000
 
 // ... For Heroku: other imports 
 const path = require("path")
