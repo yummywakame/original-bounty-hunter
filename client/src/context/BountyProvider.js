@@ -22,7 +22,7 @@ class BountyProvider extends Component {
     addBounty = newBounty => {
         axios.post("/bounty/v1", newBounty).then(response => {
             this.setState(prevState => ({
-                bounties: [...prevState.bounties, response.data]
+                bounties: [response.data, ...prevState.bounties]
             }))
         })
     }
@@ -38,7 +38,7 @@ class BountyProvider extends Component {
     updateBounty = (_id, updates) => {
         axios.put(`/bounty/v1/${_id}`, updates).then(response => {
             this.setState(prevState => ({
-                bounties: prevState.bounties.map(bounty => bounty._id === _id ? response.data.reverse() : bounty)
+                bounties: prevState.bounties.map(bounty => bounty._id === _id ? response.data : bounty)
             }))
         })
     }
