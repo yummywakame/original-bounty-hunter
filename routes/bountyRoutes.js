@@ -35,6 +35,7 @@ bountyRouter.post('/', (req, res) => {
     newBounty.save((err, newBountyObject) => {
         if (err) {
             res.status(500)
+            console.log(err)
             return res.send(err)
         }
         return res.status(201).send(newBountyObject)
