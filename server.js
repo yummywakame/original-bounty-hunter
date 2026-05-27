@@ -17,10 +17,10 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 // Routes
 app.use("/bounty/v1", require ('./routes/bountyRoutes.js'))
 
-// DB Connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/bountyhunter", { useNewUrlParser: true }, () => { 
-    console.log('[o] Connected to the DB')
-})
+// DB Connection (useNewUrlParser removed — no longer needed in Mongoose 8+)
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/bountyhunter")
+    .then(() => console.log('[o] Connected to the DB'))
+    .catch(err => console.error('[!] DB connection error:', err))
 
 // ... For Heroku
 app.get("*", (req, res) => {
